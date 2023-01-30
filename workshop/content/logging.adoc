@@ -3,18 +3,9 @@ In this lab you will explore the logging aggregation capabilities of
 OpenShift.
 
 An extremely important function of OpenShift is collecting and aggregating
-logs from the environments and the application pods it is running. OpenShift
-ships with an elastic log aggregation solution: *EFK*. (**E**lasticSearch,
-**F**luentd and **K**ibana)
+logs from the environments and the application pods it is running. 
 
-The cluster logging components are based upon Elasticsearch, Fluentd, and
-Kibana (EFK). The collector, Fluentd, is deployed to each node in the
-OpenShift cluster. It collects all node and container logs and writes them to
-Elasticsearch (ES). Kibana is the centralized, web UI where users and
-administrators can create rich visualizations and dashboards with the
-aggregated data. Administrators can see and search through all logs.
-Application owners and developers can allow access to logs that belong to
-their projects. The EFK stack runs on top of OpenShift.
+The cluster logging components are based upon Vector and Loki. The collector, Vector, is deployed to each node in the OpenShift Cluster.
 
 [Warning]
 ====
@@ -25,7 +16,7 @@ stack will be installed on the `infra` nodes that were created in that lab.
 [Note]
 ====
 More information may be found on the official
-link:https://docs.openshift.com/container-platform/4.9/logging/cluster-logging.html[OpenShift
+link:https://docs.openshift.com/container-platform/4.12/logging/cluster-logging.html[OpenShift
 documentation site]
 ====
 
@@ -52,7 +43,7 @@ sample CR directly.
 
 If you want to customize your deployment, make changes to the sample CR as
 needed. The following describes the configurations you can make when
-installing your cluster logging instance or modify after installtion. See the
+installing your cluster logging instance or modify after installation. See the
 Configuring sections for more information on working with each component,
 including modifications you can make outside of the Cluster Logging Custom
 Resource.
@@ -61,8 +52,13 @@ Resource.
 
 OpenShift Logging will be run from within its own namespace
 `openshift-logging`. This namespace does not exist by default, and needs to
-be created before logging may be installed. The namespace is represented in
-yaml format as:
+be created before logging may be installed. This namespace must be explicitly created by a cluster administrator with the following command:
+
+oc create ns openshift-logging
+
+To enable metrics service discovery add namespace label openshift.io/cluster-monitoring: "true".
+ 
+The namespace is represented in yaml format as:
 
 [source,yaml]
 .openshift_logging_namespace.yaml
