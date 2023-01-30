@@ -54,7 +54,10 @@ OpenShift Logging will be run from within its own namespace
 `openshift-logging`. This namespace does not exist by default, and needs to
 be created before logging may be installed. This namespace must be explicitly created by a cluster administrator with the following command:
 
+[source,bash,role="execute"]
+----
 oc create ns openshift-logging
+----
 
 To enable metrics service discovery add namespace label openshift.io/cluster-monitoring: "true".
  
