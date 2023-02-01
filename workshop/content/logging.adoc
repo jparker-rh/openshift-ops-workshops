@@ -5,7 +5,7 @@ OpenShift.
 An extremely important function of OpenShift is collecting and aggregating
 logs from the environments and the application pods it is running. 
 
-The cluster logging components are based upon Vector and Loki. The collector, Vector, is deployed to each node in the OpenShift Cluster.
+The cluster logging components are based upon Vector and Loki. Vector is a high-performance observability data pipeline that allows users to configure log forwarders to direct Openshift logs to different log collectors.  Loki is log storage built around the idea of only indexing metadata about your logs with labels (just like Prometheus labels). Log data itself is then compressed and stored in chunks in object stores, or even locally on the filesystem.  
 
 [Warning]
 ====
