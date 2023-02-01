@@ -100,7 +100,7 @@ openshift-logging   Active   11s
 
 #### Install the `Loki` and  `Cluster Logging` Operators in the cluster
 
-In order to install and configure the `EFK` stack into the cluster,
+In order to install and configure the logging stack into the cluster,
 additional operators need to be installed. These can be installed from the
 `Operator Hub` from within the cluster via the GUI.
 
