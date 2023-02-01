@@ -184,7 +184,7 @@ If either operator does not appear as installed, to troubleshoot further:
   openshift-logging and openshift-operators projects that are reporting issues.
 
 
-#### Create the Loggging `CustomResource (CR)` instance
+#### Create the Logging `CustomResource (CR)` instance
 
 Now that we have the operators installed, along with the `CRDs`, we can now
 kick off the logging install by creating a Logging `CR`. This will define how
@@ -254,7 +254,7 @@ spec:
 
 Then click `Create`.
 
-#### Verify the Loggging install
+#### Verify the Logging install
 
 Now that Logging has been created, let's verify that things are working.
 
