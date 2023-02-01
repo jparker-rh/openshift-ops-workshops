@@ -1,5 +1,5 @@
-## OpenShift Log Aggregation
-In this lab you will explore the logging aggregation capabilities of
+## OpenShift Logging
+In this lab you will explore the logging capabilities of
 OpenShift.
 
 An extremely important function of OpenShift is collecting and aggregating
